@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:paddingBottom="16dp"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    android:paddingTop="16dp"
+    android:descendantFocusability="blocksDescendants">
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/checkbox"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/allergy_name"
+        android:text="Milk"
+        android:textSize="26sp"
+        android:textStyle="bold"
+        android:layout_toEndOf="@id/checkbox"
+        android:layout_alignBaseline="@+id/checkbox"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/severity"
+        android:text="MILD"
+        android:textStyle="italic"
+        android:layout_alignParentEnd="true"
+        android:layout_alignBaseline="@+id/allergy_name"
+        android:textSize="16sp"/>
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="5dp"
+        android:src="@drawable/dotted"
+        android:layerType="software"
+        android:layout_below="@id/severity"
+        android:layout_alignStart="@id/allergy_name"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/ingredients"
+        android:layout_below="@+id/allergy_name"
+        android:layout_alignStart="@+id/allergy_name"
+        android:textSize="16sp"/>
+</RelativeLayout>

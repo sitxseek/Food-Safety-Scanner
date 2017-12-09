@@ -1,0 +1,36 @@
+<resources>
+    <string name="app_name">FoodSafetyScanner</string>
+    <string name="scan_text">Scan</string>
+    <string name="text_button">Text Search</string>
+    <string name="avoid_button">AVOID LIST</string>
+    <string name="filter_text">FILTERS</string>
+    <string name="avoid_text">Ingredients to Avoid</string>
+    <string name="add_button">ADD</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="allergy_label">Allergy Name</string>
+    <string name="severity_label">Severity</string>
+    <string name="save_button">SAVE</string>
+    <string name="delete_button">DELETE</string>
+    <string name="ingredient_button">Add Ingredient</string>
+    <string name="safe">Safe to eat</string>
+    <string name="not_safe">Not safe for consumption</string>
+    <string name="not_contain">does not contain any ingredients found in your avoid list.</string>
+    <string name="maybe_safe">Eat at your own discretion</string>
+    <string name="back">BACK TO MAIN</string>
+    <string name="add_description">Add</string>
+    <string name="take_picture">CAPTURE</string>
+    <string name="not_found">Sorry, could not find item.</string>
+    <string name="empty_list">Add an ingredient you want to avoid (allergic or not)</string>
+    <string name="empty_filter">Add an allergy group (e.g., nut, dairy)</string>
+    <string name="empty_ingredient">Add ingredient containing allergy</string>
+    <string name="no_ingredient">Could not find the ingredient statement for this item.</string>
+    <string-array name="severity_array">
+        <item>LIFE-THREATENING</item>
+        <item>MODERATE</item>
+        <item>MILD</item>
+    </string-array>
+    <string name="title_activity_tab">TabActivity</string>
+    <string name="action_settings">Settings</string>
+    <string name="section_format">Hello World from section: %1$d</string>
+</resources>

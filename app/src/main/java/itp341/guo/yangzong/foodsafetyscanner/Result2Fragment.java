@@ -94,7 +94,7 @@ public class Result2Fragment extends Fragment {
         });
 
         Log.d("query_value", query);
-        String url = "https://api.nutritionix.com/v1_1/item?id=" + query + "&appId=15f0aa3f&appKey=ff47eadb8037bab107ad4a8827359f42";
+        String url = "https://api.nutritionix.com/v1_1/item?id=" + query + "&fields=nf_ingredient_statement&appId=15f0aa3f&appKey=db3ad5644db1c988917872c4423f5631";
         RequestQueue queue = Volley.newRequestQueue(getActivity());
 
         JsonObjectRequest jsObjRequest = new JsonObjectRequest
@@ -126,6 +126,7 @@ public class Result2Fragment extends Fragment {
         String ingredientsString = null;
         try {
             ingredientsString = object.getString("nf_ingredient_statement");
+            System.out.println("HELLO" + ingredientsString);
             itemName = object.getString("item_name");
             brandName = object.getString("brand_name");
         } catch (JSONException e) {
@@ -140,13 +141,15 @@ public class Result2Fragment extends Fragment {
 //            ingredientsString=ingredientsString.replaceAll("\\"+s, "");
 //        }
         ingredientsString = ingredientsString.replaceAll("[()]", "");
-        List<String> ingredients = Arrays.asList(ingredientsString.split("\\s*,\\s*"));
+        List<String> ingredients = Arrays.asList(ingredientsString.split("[^\\w']+"));
+        for (int i = 0; i < ingredients.size(); i++) System.out.println(ingredients.get(i));
         Log.d("ingredientsString", ingredientsString);
         //List<String> ingredients = new ArrayList<String>(Arrays.asList(ingredientsString.split(" ")));
         List<String> contains = new ArrayList<String>();
         List<Allergy> allergies = new ArrayList<Allergy>();
         for (int i = 0; i < ingredients.size(); i++) {
             if (AllergySingleton.get(getActivity()).getIngredients().contains(ingredients.get(i).toLowerCase()) && !contains.contains(ingredients.get(i))) {
+                System.out.println("pooper");
                 contains.add(ingredients.get(i));
             }
             for (int j = 0; j < AllergySingleton.get(getActivity()).getAllAllergies().size(); j++) {

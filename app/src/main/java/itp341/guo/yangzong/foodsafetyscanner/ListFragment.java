@@ -71,12 +71,13 @@ public class ListFragment extends Fragment {
                     ingredientText.setText("");
                     ((BaseAdapter) ingredientsList.getAdapter()).notifyDataSetChanged();
                     // saving to preferences
-                    SharedPreferences preferences = getActivity().getSharedPreferences(MainActivity.PREF_FILE_NAME, Context.MODE_PRIVATE);
+                    SharedPreferences preferences = getActivity().getSharedPreferences(
+                            MainActivity.PREF_FILE_NAME, Context.MODE_PRIVATE);
                     SharedPreferences.Editor prefsEditor = preferences.edit();
                     Gson gson = new Gson();
                     String json = gson.toJson(AllergySingleton.get(getActivity()).getIngredients());
                     prefsEditor.putString(MainActivity.INGREDIENTS, json);
-                    prefsEditor.commit();
+                    prefsEditor.apply();
                 }
             }
         });

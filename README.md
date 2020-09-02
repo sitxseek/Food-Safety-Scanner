@@ -1,7 +1,7 @@
 # Food-Safety-Scanner
 Android application for people with food allergies or intolerances.
 
-![Alt text](app/src/main/res/fsc1.png?raw=true)
+![Alt text](app/src/main/res/fsc1.png)
 
 ![Alt text](app/src/main/res/fsc2.jpg?raw=true)
 
